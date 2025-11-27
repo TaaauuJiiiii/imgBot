@@ -10,6 +10,16 @@ const {
     ComponentType,
     Events
 } = require('discord.js');
+const http = require('http');
+
+// ================= RENDER PORT BINDING =================
+const port = process.env.PORT || 3000;
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Jag Raha hu Bsdk, G m ghus jaao bot ki');
+}).listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
+});
 
 // ================= CONFIGURATION =================
 const TOKEN = process.env.DISCORD_TOKEN;
